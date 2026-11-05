@@ -1,0 +1,55 @@
+.works-page { min-width: 0; }
+.works-heading { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.works-heading h2 { margin: 5px 0 7px; color: var(--ink); font-size: 1.5rem; letter-spacing: -.5px; }
+.works-heading p { max-width: 520px; margin: 0; color: var(--muted); }
+.works-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+.works-switch { display: flex; flex-wrap: wrap; gap: 5px; padding: 4px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+.works-switch button { display: flex; flex: 1 1 auto; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 8px 12px; border: 0; border-radius: 8px; background: transparent; color: #6c796f; cursor: pointer; font-size: var(--text-small); }
+.works-switch button[aria-pressed="true"] { background: #eaf1eb; color: var(--forest); font-weight: 650; }
+.works-switch button span { min-width: 23px; padding: 1px 6px; border-radius: 6px; background: #f3f6f3; font-size: var(--text-caption); font-variant-numeric: tabular-nums; }
+.works-filter { display: flex; align-items: center; min-width: 0; max-width: 100%; gap: 9px; color: var(--muted); font-size: var(--text-small); }
+.works-filter select { min-width: 0; max-width: min(22rem, 100%); min-height: 42px; padding: 8px 28px 8px 10px; border: 1px solid #dfe6df; border-radius: 8px; background: white; color: #425348; }
+.works-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.work-card { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 21px; border: 1px solid var(--line); border-radius: 13px; background: white; }
+.work-copy { min-width: 0; flex: 1; }
+.work-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; color: #7c8880; font-size: var(--text-caption); }
+.work-status { display: inline-flex; padding: 4px 9px; border-radius: 20px; font-weight: 650; }
+.work-status.planned { background: #edf1ed; color: #5d735f; }
+.work-status.done { background: #e5f1e7; color: #416d4b; }
+.work-card h3 { margin: 12px 0 8px; color: #304238; font-size: 1.125rem; line-height: 1.45; font-weight: 650; }
+.work-note { margin: 0 0 13px; color: #65736a; font-size: var(--text-small); white-space: pre-wrap; overflow-wrap: anywhere; }
+.work-dates { display: flex; flex-wrap: wrap; gap: 7px 18px; color: #859188; font-size: var(--text-caption); }
+.work-dates .is-overdue { color: #ab5a47; }
+.work-actions { display: grid; justify-items: end; flex: 0 1 230px; gap: 7px; }
+.work-actions .primary-action, .work-actions .secondary-action { min-height: 42px; }
+.work-edit { min-height: 36px; padding: 4px 8px; border: 0; border-radius: 6px; background: transparent; color: #63816c; cursor: pointer; font-size: var(--text-small); }
+.work-edit:hover { background: #f4f8f4; }
+.work-edit:disabled { opacity: .6; cursor: wait; }
+.works-empty { display: grid; justify-items: center; padding: 45px 20px; border: 1px dashed #d7e1d8; border-radius: 14px; background: #fbfdfb; text-align: center; }
+.works-empty-mark { display: grid; place-items: center; width: 45px; height: 45px; margin-bottom: 16px; border-radius: 12px; background: #edf3ed; color: #63856b; font-size: 1.5rem; }
+.works-empty h3 { margin: 0 0 8px; color: #3d5143; font-size: 1.125rem; }
+.works-empty p { max-width: 450px; margin: 0; color: #839087; font-size: var(--text-small); }
+.works-loading { padding: 25px 0; color: var(--muted); }
+.dialog-card.work-dialog { margin: auto; max-width: calc(100% - 24px); border-radius: 15px; }
+.work-dialog::backdrop { background: #1f3027a8; backdrop-filter: blur(3px); }
+.work-fields { display: grid; gap: 15px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.work-field-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; gap: 12px; }
+.work-fields .form-field { position: relative; }
+.work-fields small { display: inline; color: #929b94; font-size: var(--text-fine); font-weight: 400; }
+.work-fields input, .work-fields select, .work-fields textarea { min-height: 42px; width: 100%; min-width: 0; }
+.work-fields textarea { resize: vertical; max-height: 300px; padding: 10px; border: 1px solid #dfe6df; border-radius: 7px; color: #344339; outline: none; font-size: var(--text-body); }
+.work-fields textarea:focus, .works-filter select:focus { border-color: #83a18a; box-shadow: 0 0 0 3px #dfeae0; }
+.works-switch button:focus-visible, .work-edit:focus-visible { outline: 3px solid #a9c2ad; outline-offset: 2px; }
+.work-dialog .form-error { margin-top: 14px; }
+@media (max-width: 650px) {
+  .work-card { flex-direction: column; gap: 16px; padding: 17px; }
+  .work-actions { display: flex; flex-wrap: wrap; flex: auto; justify-content: flex-start; width: 100%; }
+  .work-actions .primary-action, .work-actions .secondary-action { flex: 1 1 auto; }
+  .works-filter { width: 100%; }
+  .works-filter select { flex: 1; max-width: 100%; }
+  .works-switch { width: 100%; }
+}
+@media (max-width: 400px) {
+  .work-field-pair { grid-template-columns: minmax(0, 1fr); }
+}
+

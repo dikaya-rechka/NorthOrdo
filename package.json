@@ -1,0 +1,33 @@
+{
+  "name": "northordo-ver0-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:api": "node --watch --watch-path=server/src --env-file=server/.env server/src/index.ts",
+    "db:migrate": "node --env-file=server/.env server/src/db/migrate.ts",
+    "setup:owner": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-owner.ps1",
+    "build": "tsc -b && vite build",
+    "typecheck:api": "tsc -p tsconfig.server.json --noEmit",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.5",
+    "fastify": "^5.12.8",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.89.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.5"
+  }
+}

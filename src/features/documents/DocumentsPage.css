@@ -1,0 +1,45 @@
+.documents-page { min-width: 0; }
+.documents-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+.documents-heading h2 { margin: 6px 0; font-size: 1.5rem; color: var(--ink); }
+.documents-heading p { margin: 0; color: var(--muted); }
+.documents-filters { display: grid; grid-template-columns: minmax(0,1.5fr) repeat(2,minmax(0,1fr)); gap: 13px; padding: 17px; background: white; border: 1px solid var(--line); border-radius: 12px; }
+.documents-subfilters { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin: 15px 0 20px; font-size: var(--text-small); color: #83978a; }
+.documents-subfilters label { display: flex; align-items: center; gap: 8px; }
+.documents-subfilters input { width: 18px; height: 18px; accent-color: var(--forest); }
+.documents-list { display: grid; grid-template-columns: minmax(0,1fr); gap: 13px; padding: 0; list-style: none; }
+.document-card { display: flex; align-items: start; justify-content: space-between; gap: 24px; padding: 21px; background: white; border: 1px solid var(--line); border-radius: 13px; }
+.document-copy { min-width: 0; flex: 1; }
+.document-meta { display: flex; flex-wrap: wrap; gap: 9px; font-size: var(--text-caption); color: #8a9c90; }
+.document-meta > span:first-child { padding: 3px 8px; border-radius: 8px; background: #edf4ef; color: #62826d; }
+.document-copy h3 { font-size: 1.125rem; margin: 12px 0 6px; }
+.document-title { text-align: left; border: 0; padding: 0; background: none; color: #3c6049; font: inherit; font-weight: 650; cursor: pointer; overflow-wrap: anywhere; }
+.document-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.document-copy p { margin: 7px 0; color: #85988c; font-size: var(--text-small); }
+.document-copy .document-filename { color: #5d7e69; }
+.document-copy small { color: #92a297; font-size: var(--text-caption); }
+.document-note { white-space: pre-wrap; }
+.document-actions { display: grid; gap: 8px; flex: 0 1 195px; }
+.document-actions button { min-height: 39px; }
+.document-archive { border: 0; padding: 6px; border-radius: 7px; background: transparent; color: #8b9b91; cursor: pointer; font-size: var(--text-small); }
+.document-archive:hover { background: #f2f6f3; }
+.documents-empty { padding: 40px 20px; text-align: center; border: 1px dashed #d8e4dc; border-radius: 12px; color: #8a9d91; }
+.documents-empty h3 { color: #587963; }
+.dialog-card.documents-dialog { margin: auto; max-width: calc(100% - 24px); border-radius: 15px; }
+.documents-dialog::backdrop { background: #1f3027a8; backdrop-filter: blur(3px); }
+.documents-form { display: grid; grid-template-columns: minmax(0,1fr); gap: 15px; min-width: 0; padding: 0; margin: 0; border: 0; }
+.documents-form textarea { width: 100%; min-height: 80px; padding: 10px; border: 1px solid #dfe6df; border-radius: 7px; color: #344339; resize: vertical; font-size: var(--text-body); }
+.document-file-field { padding: 15px; border: 1px dashed #b7cdbf; border-radius: 10px; background: #f5faf6; }
+.document-file-field input[type=file] { min-width: 0; height: auto; padding: 8px; overflow: hidden; }
+.document-file-field small, .document-file-field > span { font-size: var(--text-caption); color: #879e8e; }
+.document-file-field input::file-selector-button { border: 0; border-radius: 5px; padding: 7px; margin-right: 8px; background: #e0ece3; color: #496d54; cursor: pointer; font: inherit; }
+.documents-caption { font-size: var(--text-small); color: #8a9e92; margin: 8px 0 20px; }
+.documents-dialog .form-error { margin-top: 14px; }
+.document-history-title { color: #5e7e69; font-size: 1.125rem; }
+.document-history { list-style: none; margin: 0; padding: 0; }
+.document-history li { display: grid; gap: 6px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.document-history strong { font-size: var(--text-small); color: #5d7d68; }
+.document-history span, .document-history small { color: #8da196; font-size: var(--text-caption); }
+.document-title:focus-visible, .document-archive:focus-visible { outline: 3px solid #a9c2ad; outline-offset: 2px; }
+@media(max-width:900px) { .documents-filters { grid-template-columns: repeat(2,minmax(0,1fr)); } .documents-filters > label:first-child { grid-column: 1 / -1; } }
+@media(max-width:650px) { .document-card { flex-direction: column; } .document-actions { display: flex; flex-wrap: wrap; flex: auto; width: 100%; } .document-actions button { flex: 1 1 auto; } }
+@media(max-width:400px) { .documents-filters { grid-template-columns: minmax(0,1fr); } }
